@@ -1,4 +1,4 @@
-package com.zlt.services;
+package com.zlt.service;
 
 import com.zlt.entity.UserEntity;
 import com.zlt.mapper.UserMapper;

@@ -1,7 +1,7 @@
 package com.zlt.test;
 
 import com.zlt.entity.UserEntity;
-import com.zlt.services.UserServices;
+import com.zlt.service.UserServices;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
