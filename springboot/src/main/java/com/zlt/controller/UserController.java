@@ -33,7 +33,8 @@ public class UserController {
             @ApiResponse(code = 500, message = "服务端错误", response = ResultVO.class)
     })
     @ResponseBody
-    public ResultVO<Void> findAdsInFive(@RequestBody @ApiParam(name = "adminEncyclopediaAdFormSubmitVo", value = "百科广告提交实体", required = true) UserSubmitVO userSubmitVO) {
+    public ResultVO<Void> findAdsInFive(@RequestBody @ApiParam(name = "userSubmitVO", value = "用户注册提交实体", required = true) UserSubmitVO userSubmitVO) {
+        userServices.add(userSubmitVO);
         return ResultVO.success(null);
     }
 }

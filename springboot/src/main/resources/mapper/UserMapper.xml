@@ -15,7 +15,11 @@
   </resultMap>
 
   <select id="findUser" resultMap="BaseResultMap">
-    SELECT uid,username FROM user
+    SELECT uid,username,password FROM user
   </select>
+
+  <insert id="add" parameterType="com.zlt.entity.UserEntity">
+    insert into user (uid,username,password) values (#{uid},#{username},#{password})
+  </insert>
 
 </mapper>

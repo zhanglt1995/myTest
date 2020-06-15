@@ -2,6 +2,7 @@ package com.zlt.test;
 
 import com.zlt.entity.UserEntity;
 import com.zlt.service.UserServices;
+import com.zlt.vo.UserSubmitVO;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -20,5 +21,14 @@ public class UserTest extends BaseTest {
     public void test(){
         List<UserEntity> userEntityList = userServices.findUser();
         System.out.println(userEntityList);
+    }
+
+    @Test
+    public void add(){
+        UserSubmitVO userSubmitVO = new UserSubmitVO();
+        userSubmitVO.setUsername("张三");
+        userSubmitVO.setPassword("123");
+
+        userServices.add(userSubmitVO);
     }
 }

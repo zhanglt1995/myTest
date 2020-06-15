@@ -15,4 +15,10 @@ public interface UserMapper {
      * @return
      */
     List<UserEntity> findUser();
+
+    /**
+     * 注册用户
+     * @param userEntity
+     */
+    void add(UserEntity userEntity);
 }
