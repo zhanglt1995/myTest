@@ -1,5 +1,6 @@
 package com.zlt.vo;
 
+import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
@@ -9,6 +10,7 @@ import lombok.Data;
  * @desc
  */
 @Data
+@ApiModel(value = "UserSubmitVO", description = "用户注册提交实体")
 public class UserSubmitVO {
     @ApiModelProperty(value = "用户名", example = "张三")
     private String username;

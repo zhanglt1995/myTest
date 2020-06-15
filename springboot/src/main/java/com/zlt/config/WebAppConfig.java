@@ -59,7 +59,7 @@ public class WebAppConfig implements WebMvcConfigurer {
                         "access-control-allow-origin",
                         "access-control-max-age",
                         "X-Frame-Options")
-                .allowCredentials(false).maxAge(3600);
+                .allowCredentials(true).maxAge(3600);
         WebMvcConfigurer.super.addCorsMappings(registry);
     }
 }
