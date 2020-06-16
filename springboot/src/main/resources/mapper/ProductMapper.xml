@@ -15,7 +15,7 @@
     </resultMap>
 
     <select id="findProductByPage" resultMap="BaseResultMap">
-    SELECT pid,pname,market_price,shop_price FROM product limit #{startIndex},#{pageSize}
+    SELECT pid,pname,market_price,shop_price,pimage,pdate,is_hot,pdesc,pflag,cid FROM product limit #{startIndex},#{pageSize}
   </select>
 
 </mapper>

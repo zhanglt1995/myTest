@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+
 /**
  * @author zhanglitao
  * @create 2020/6/14 20:18
@@ -29,8 +31,20 @@ public class UserController {
             @ApiResponse(code = 500, message = "服务端错误", response = ResultVO.class)
     })
     @ResponseBody
-    public ResultVO<Void> findAdsInFive(@RequestBody @ApiParam(name = "userSubmitVO", value = "用户注册提交实体", required = true) UserSubmitVO userSubmitVO) {
+    public ResultVO<Void> add(@RequestBody @ApiParam(name = "userSubmitVO", value = "用户注册提交实体", required = true) UserSubmitVO userSubmitVO) {
         userServices.add(userSubmitVO);
+        return ResultVO.success(null);
+    }
+
+    @ApiOperation(value = "用户登录", notes = "用户登录")
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    @ApiResponses({
+            @ApiResponse(code = 400, message = "参数不合法", response = ResultVO.class),
+            @ApiResponse(code = 500, message = "服务端错误", response = ResultVO.class)
+    })
+    @ResponseBody
+    public ResultVO<Void> login(@RequestBody @ApiParam(name = "userSubmitVO", value = "用户注册提交实体", required = true) UserSubmitVO userSubmitVO, HttpServletRequest request) {
+        userServices.login(userSubmitVO,request);
         return ResultVO.success(null);
     }
 }

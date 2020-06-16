@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import springfox.documentation.spring.web.json.Json;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -48,5 +49,13 @@ public class UserServices {
             log.error("userMapper.add is exception userSubmitVO = %s", JSON.toJSONString(userSubmitVO),e);
         }
         throw new BusinessException(CodeMsgBean.SERVER_ERROR);
+    }
+
+    /**
+     * 用户登录
+     * @param userSubmitVO
+     * @param request
+     */
+    public void login(UserSubmitVO userSubmitVO, HttpServletRequest request) {
     }
 }
